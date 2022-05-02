@@ -17,6 +17,10 @@ See [demo version](https://grzegorz103.github.io/ngx-chess-board/chess-board/ind
 
 ## Use example
 
+### Local Deployment
+1. `ng build`
+2. `http-server -p 8080 -c-1 dist/chess-board`
+
 `ngx-chess-board` exports following components:
 * `NgxChessBoardModule`
 * `NgxChessBoardService`
