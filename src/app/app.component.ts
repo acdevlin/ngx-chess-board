@@ -156,4 +156,11 @@ export class AppComponent {
             '17. Nb6 Nb5 18. Nbxd5 f4 19. Ne4 Na7 20. Nexf6';
         this.setPgn();
     }
+
+    setDoubleBongcloud() {
+        this.fen = 'rnbq1bnr/ppppkppp/8/4p3/4P3/8/PPPPKPPP/RNBQ1BNR w - - 0 3';
+        this.setFen();
+        this.pgn = '1. e4 e5 2. Ke2 Ke7';
+        this.setPgn();
+    }
 }
