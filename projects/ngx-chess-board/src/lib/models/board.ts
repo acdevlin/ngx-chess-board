@@ -312,4 +312,8 @@ export class Board {
     getCurrentPlayerColor(): number {
         return this.currentWhitePlayer ? Color.WHITE : Color.BLACK;
     }
+
+    getWinningPlayerName(): string {
+        return !this.currentWhitePlayer ? "WHITE" : "BLACK";
+    }
 }

@@ -77,6 +77,12 @@ export class AppComponent {
         this.fen = this.boardManager.getFEN();
         this.pgn = this.boardManager.getPGN();
         console.log(move);
+        if(move.checkmate) {
+            alert("Checkmate! " + this.boardManager.engineFacade.board.getWinningPlayerName() + " wins!");
+        }
+        if(move.stalemate) {
+            alert("Stalemate! No one wins.");
+        }
     }
 
     public moveManual(): void {
