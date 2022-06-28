@@ -41,7 +41,7 @@ export class ChessGameComponent {
 
     public darkTileColor = 'rgb(97, 84, 61)';
     public lightTileColor = '#BAA378';
-    public size = 600;
+    public size = 500;
     public dragDisabled = false;
     public drawDisabled = false;
     public lightDisabled = false;

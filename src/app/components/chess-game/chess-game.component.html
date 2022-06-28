@@ -1,12 +1,7 @@
-<div style="width:600px; margin-left: auto; margin-right: auto; padding-bottom: 100px;max-width: 100%">
-  <h2 style="text-align: center">ngx-chess-board example</h2>
+<div style="width:500px; margin-left: auto; margin-right: auto; padding-bottom: 100px;max-width: 100%">
   <ngx-chess-board #board [size]="size" [lightTileColor]="lightTileColor" (moveChange)="moveCallback($event)"
       [dragDisabled]="dragDisabled" [drawDisabled]="drawDisabled" [darkTileColor]="darkTileColor"
       [lightDisabled]="lightDisabled" [darkDisabled]="darkDisabled" [freeMode]="freeMode"></ngx-chess-board>
-  <!--<ngx-chess-board></ngx-chess-board> You can also use it like this  -->
-  <hr>
-  <!--<router-outlet></router-outlet>-->
-  <a routerLink="/settings">Settings</a>
   <hr>
   <div style="display:flex;">
       <button type="button" class="btn btn-primary" style="margin-left:auto; margin-right: 10px"
