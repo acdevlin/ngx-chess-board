@@ -42,7 +42,7 @@ export class ChessGameComponent implements OnInit, OnDestroy {
     };
 
     lightTileColor: string;
-    public darkTileColor = 'rgb(97, 84, 61)';
+    darkTileColor:string ;
     public size = 500;
     public dragDisabled = false;
     public drawDisabled = false;
@@ -54,16 +54,19 @@ export class ChessGameComponent implements OnInit, OnDestroy {
     public selectedColor = '1';
     public pgn: string = '';
 
-    subscription: Subscription;
+    lightTileColorSubscription: Subscription;
+    darkTileColorSubscription: Subscription;
 
     constructor(private data: DataService) { }
 
     ngOnDestroy(): void {
-        this.subscription.unsubscribe();
+        this.lightTileColorSubscription.unsubscribe();
+        this.darkTileColorSubscription.unsubscribe();
     }
 
     ngOnInit(): void {
-        this.subscription = this.data.currentLightTileColor.subscribe(lightTileColor => this.lightTileColor = lightTileColor);
+        this.lightTileColorSubscription = this.data.currentLightTileColor.subscribe(lightTileColor => this.lightTileColor = lightTileColor);
+        this.darkTileColorSubscription = this.data.currentDarkTileColor.subscribe(darkTileColor => this.darkTileColor = darkTileColor);
     }
 
     public reset(): void {

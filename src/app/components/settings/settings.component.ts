@@ -11,20 +11,31 @@ import { Subscription } from 'rxjs';
 export class SettingsComponent implements OnInit, OnDestroy {
 
     lightTileColor: string;
-    subscription: Subscription;
+    lightTileColorSubscription: Subscription;
+
+    darkTileColor: string;
+    darkTileColorSubscription: Subscription;
 
     constructor(private data: DataService) { }
 
     ngOnDestroy(): void {
-        this.subscription.unsubscribe();
+        this.lightTileColorSubscription.unsubscribe();
+        this.darkTileColorSubscription.unsubscribe();
     }
 
     ngOnInit(): void {
-        this.subscription = this.data.currentLightTileColor.subscribe(lightTileColor => this.lightTileColor = lightTileColor);
+        this.lightTileColorSubscription = this.data.currentLightTileColor.subscribe(lightTileColor => this.lightTileColor = lightTileColor);
+        this.darkTileColorSubscription = this.data.currentDarkTileColor.subscribe(darkTileColor => this.darkTileColor = darkTileColor);
+
     }
 
     updateLightTileColor(color: string) {
         this.lightTileColor = color;
         this.data.updateLightTileColor(this.lightTileColor);
+    }
+
+    updateDarkTileColor(color: string) {
+        this.darkTileColor = color;
+        this.data.updateDarkTileColor(this.darkTileColor);
     }
 }
