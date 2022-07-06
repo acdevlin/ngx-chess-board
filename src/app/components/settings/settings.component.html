@@ -1,34 +1,31 @@
 <div style="width:500px; margin-left: auto; margin-right: auto; padding-bottom: 100px;max-width: 100%">
 
-<label for="lightTile">Light tile color:</label>
-<div class="input-group">
+<label for="lightTile" style="padding-right: 10px;">Light tile color: </label>
     <input #lightTileColorPicker 
        [value]="lightTileColor"
        [style.background]="lightTileColor"
        [cpOKButton]="true"
-       [cpOKButtonClass]= "'btn btn-success'"
+       [cpOKButtonClass]= "'btn btn-success btn-lg btn-block'"
        [cpCancelButton]="true"
-       [cpCancelButtonClass]= "'btn btn-danger'"
+       [cpCancelButtonClass]= "'btn btn-danger btn-lg btn-block'"
        [cpSaveClickOutside]="false"
        (colorPickerSelect)="updateLightTileColor(lightTileColorPicker.value)"
        [(colorPicker)]="lightTileColor"/>
-</div>
 
 <br>
 
-<label for="darkTile">Dark tile color:</label>
-<div class="input-group">
+<label for="darkTile" style="padding-right: 10px;">Dark tile color: </label>
     <input #darkTileColorPicker 
        [value]="darkTileColor"
        [style.background]="darkTileColor"
        [cpOKButton]="true"
-       [cpOKButtonClass]= "'btn btn-success'"
+       [cpOKButtonClass]= "'btn btn-success btn-lg btn-block'"
        [cpCancelButton]="true"
-       [cpCancelButtonClass]= "'btn btn-danger'"
+       [cpCancelButtonClass]= "'btn btn-danger btn-lg btn-block'"
        [cpSaveClickOutside]="false"
        (colorPickerSelect)="updateDarkTileColor(darkTileColorPicker.value)"
        [(colorPicker)]="darkTileColor"/>
-</div>
+
 
 <br>
 <!--

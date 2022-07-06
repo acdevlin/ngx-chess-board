@@ -26,7 +26,6 @@ export class SettingsComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         this.lightTileColorSubscription = this.data.currentLightTileColor.subscribe(lightTileColor => this.lightTileColor = lightTileColor);
         this.darkTileColorSubscription = this.data.currentDarkTileColor.subscribe(darkTileColor => this.darkTileColor = darkTileColor);
-
     }
 
     updateLightTileColor(color: string) {
