@@ -1,5 +1,5 @@
 <div style="width:500px; margin-left: auto; margin-right: auto; padding-bottom: 100px;max-width: 100%">
-  <ngx-chess-board #board [size]="size" [lightTileColor]="lightTileColor" (moveChange)="moveCallback($event)"
+  <ngx-chess-board #board [size]="size" [lightTileColor]="this.lightTileColor" (moveChange)="moveCallback($event)"
       [dragDisabled]="dragDisabled" [drawDisabled]="drawDisabled" [darkTileColor]="darkTileColor"
       [lightDisabled]="lightDisabled" [darkDisabled]="darkDisabled" [freeMode]="freeMode"></ngx-chess-board>
   <hr>
@@ -22,15 +22,6 @@
       </button>
   </div>
   <hr>
-  <label for="lightTile">Light tile color:</label>
-  <div class="input-group">
-      <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon3" [style.background-color]="lightTileColor"></span>
-      </div>
-      <input type="text" class="form-control" placeholder="blue" [(ngModel)]="lightTileColor" id="lightTile"
-          aria-describedby="basic-addon3">
-  </div>
-  <br>
   <label for="darkTile">Dark tile color:</label>
   <div class="input-group">
       <div class="input-group-prepend">

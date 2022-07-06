@@ -1,4 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit, OnDestroy } from '@angular/core';
+import { DataService } from "../../data.service";
+import { Subscription } from 'rxjs';
 import {
     MoveChange,
     NgxChessBoardComponent,
@@ -15,7 +17,7 @@ import { FenComponent } from '../fen/fen.component';
   templateUrl: './chess-game.component.html',
   styleUrls: ['./chess-game.component.scss']
 })
-export class ChessGameComponent {
+export class ChessGameComponent implements OnInit, OnDestroy {
 
   @ViewChild('board')
     boardManager: NgxChessBoardComponent;
@@ -39,8 +41,8 @@ export class ChessGameComponent {
         whiteRookUrl: ''
     };
 
+    lightTileColor: string;
     public darkTileColor = 'rgb(97, 84, 61)';
-    public lightTileColor = '#BAA378';
     public size = 500;
     public dragDisabled = false;
     public drawDisabled = false;
@@ -51,6 +53,18 @@ export class ChessGameComponent {
     public selectedPiece = '1';
     public selectedColor = '1';
     public pgn: string = '';
+
+    subscription: Subscription;
+
+    constructor(private data: DataService) { }
+
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
+    }
+
+    ngOnInit(): void {
+        this.subscription = this.data.currentLightTileColor.subscribe(lightTileColor => this.lightTileColor = lightTileColor);
+    }
 
     public reset(): void {
         alert('Resetting board');

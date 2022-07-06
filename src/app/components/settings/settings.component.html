@@ -1,23 +1,15 @@
-<!--
+<div style="width:500px; margin-left: auto; margin-right: auto; padding-bottom: 100px;max-width: 100%">
 <label for="lightTile">Light tile color:</label>
 <div class="input-group">
+    <!-- TODO doesn't update after clicking out of text input, only after clicking button -->
     <div class="input-group-prepend">
-        <span
-            id="basic-addon3"
-            class="input-group-text"
-            [style.background-color]="lightTileColor"
-        ></span>
+        <span class="input-group-text" id="basic-addon3" [style.background-color]="lightTileColorPicker.value"></span>
     </div>
-    <input
-        id="lightTile"
-        class="form-control"
-        [(ngModel)]="lightTileColor"
-        type="text"
-        aria-describedby="basic-addon3"
-        placeholder="blue"
-    >
+    <input type="text" id="light-tile-color-input" aria-describedby="basic-addon3" value="{{lightTileColor}}" #lightTileColorPicker>
+    <button type="button" (click)="updateLightTileColor(lightTileColorPicker.value)">Update light tile color</button>
 </div>
 <br>
+<!--
 <label for="darkTile">Dark tile color:</label>
 <div class="input-group">
     <div class="input-group-prepend">
@@ -100,3 +92,4 @@
     </label>
 </div>
 -->
+</div>
