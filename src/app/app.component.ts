@@ -1,5 +1,4 @@
-import { Component, ViewChild, OnInit, OnDestroy } from '@angular/core';
-import { DataService } from "./data.service";
+import { Component } from '@angular/core';
 import {
     MoveChange,
     NgxChessBoardComponent,
@@ -17,21 +16,7 @@ import { Subscription } from 'rxjs';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent {
     title = 'ngx-chess-demo';
-    lightTileColor: string;
-
-    subscription: Subscription;
-
-    constructor(private data: DataService) { }
-
-    ngOnInit() {
-        this.subscription = this.data.currentLightTileColor.subscribe(lightTileColor => this.lightTileColor = lightTileColor)
-    }
-
-    ngOnDestroy() {
-        this.subscription.unsubscribe();
-    }
-
 
 }
