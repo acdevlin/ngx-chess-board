@@ -15,10 +15,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { ChessGameComponent } from './components/chess-game/chess-game.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
-  declarations: [AppComponent, ActionsComponent, SettingsComponent, MovesComponent, FenComponent, ChessGameComponent],
+  declarations: [AppComponent, ActionsComponent, SettingsComponent, MovesComponent, FenComponent, ChessGameComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
