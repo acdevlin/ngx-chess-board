@@ -2,24 +2,32 @@
 
 <label for="lightTile">Light tile color:</label>
 <div class="input-group">
-    <!-- TODO doesn't update after clicking out of text input, only after clicking a button -->
-    <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon3" [style.background-color]="lightTileColorPicker.value"></span>
-    </div>
-    <input type="text" id="light-tile-color-input" aria-describedby="basic-addon3" value="{{lightTileColor}}" #lightTileColorPicker>
-    <button type="button" (click)="updateLightTileColor(lightTileColorPicker.value)">Update light tile color</button>
+    <input #lightTileColorPicker 
+       [value]="lightTileColor"
+       [style.background]="lightTileColor"
+       [cpOKButton]="true"
+       [cpOKButtonClass]= "'btn btn-success'"
+       [cpCancelButton]="true"
+       [cpCancelButtonClass]= "'btn btn-danger'"
+       [cpSaveClickOutside]="false"
+       (colorPickerSelect)="updateLightTileColor(lightTileColorPicker.value)"
+       [(colorPicker)]="lightTileColor"/>
 </div>
 
 <br>
 
 <label for="darkTile">Dark tile color:</label>
 <div class="input-group">
-    <!-- TODO doesn't update after clicking out of text input, only after clicking a button -->
-    <div class="input-group-prepend">
-        <span class="input-group-text" id="darkTileSpan" [style.background-color]="darkTileColorPicker.value"></span>
-    </div>
-    <input type="text" id="dark-tile-color-input" aria-describedby="basic-addon3" value="{{darkTileColor}}" #darkTileColorPicker>
-    <button type="button" (click)="updateDarkTileColor(darkTileColorPicker.value)">Update dark tile color</button>
+    <input #darkTileColorPicker 
+       [value]="darkTileColor"
+       [style.background]="darkTileColor"
+       [cpOKButton]="true"
+       [cpOKButtonClass]= "'btn btn-success'"
+       [cpCancelButton]="true"
+       [cpCancelButtonClass]= "'btn btn-danger'"
+       [cpSaveClickOutside]="false"
+       (colorPickerSelect)="updateDarkTileColor(darkTileColorPicker.value)"
+       [(colorPicker)]="darkTileColor"/>
 </div>
 
 <br>

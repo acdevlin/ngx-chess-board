@@ -16,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { ChessGameComponent } from './components/chess-game/chess-game.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatSidenavModule,
     MatIconModule,
     MatButtonModule,
+    ColorPickerModule,
     NgxChessBoardModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
